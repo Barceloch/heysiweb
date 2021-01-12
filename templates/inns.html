@@ -1,0 +1,79 @@
+{% extends "index.html" %}
+{% load visits_tags %}
+{% load i18n %}
+{% block banner %}{% endblock %}
+{% block aside %}{% endblock %}
+{% block content %}
+<!--==============================content================================-->
+                <section id="content">
+					<div class="wrapper">
+						<article class="col-1">
+							<div class="indent-left">
+								<h3>{% trans "Lista de Hostales" %}</h3>
+								<a href="/agregar"> {% trans "Haga click aquí para agregar su Hostal" %}</a>
+								<p>{% trans 'Para reservar directamente haga clic en "RESERVAR AHORA!", para ver más detalles sobre un Hostal haga clic cualquier otro lugar' %}</p>
+								<!-- Servicios  -->
+        <div class="boxPag">
+              <ul class="sbox">
+				  {% for inn in inns.object_list %}
+                <li>
+                <a href="/{{ inn.machine_name }}" title="Lodging">
+                 <span><img src="/static/{{ inn.inn_img.inn_img_thumb.url }}" alt="Lodging"></span>
+                 <strong>{% trans "Hospedaje" %}</strong>
+                 <p>{{ inn.name }} </p>
+                 <em>{% trans "Habitaciones: " %}{{ inn.rooms }}</em>
+                 <em class="meses">{% trans "Precio por habitación" %}</em>
+                 {% if inn.high_season %}
+                 <em class="meses"><b>{{ inn.max_price }}</b>{% trans " cuc" %}</em>
+                 {% else %}
+                 <em class="meses"><b>{{ inn.min_price }}</b>{% trans " cuc" %}</em>
+                 {% endif %}
+                 <em><a class="book" href="/{{ inn.machine_name }}/reservacion">{% trans "RESERVAR AHORA!" %}</a></em> 
+                               
+                 <!--i class="detailbox"><font color="#053961"><b>{% trans "Dueño: " %}</b></font>{{ inn.owner }}<br />
+                 <font color="#053961"><b>{% trans "Teléfono: " %}</b></font>{{ inn.phone }}<br />
+                 <font color="#053961"><b>{% trans "Movil: " %}</b></font>{{ inn.movil }}<br />
+                 <font color="#053961"><b>{% trans "Dirección: " %}</b></font>{{ inn.address }}</i-->
+                 
+                 {% get_visits inn as visits %}
+                 {% if visits %}
+                 <em class="price">{% trans "Visitas: " %} {{ visits }}</em>
+                 {% else %}
+                 <em class="price">{% trans "Visitas: " %} 0</em>
+                 {% endif %}
+                 {% if inn.is_public %}
+
+                 {% else %}
+                 <em>{% trans "No está visible" %}</em>
+                 {% endif %}
+                 <button class="vermas">{% trans "ver más..." %}</button>
+                </a>
+               </li>
+               {% endfor %}
+
+           </ul>
+           </div>
+           <!-- Next/Prev page links  -->
+        {% if inns.object_list and inns.paginator.num_pages > 1 %}
+        <div class="pagination">
+            <span class="step-links">
+                {% if inns.has_previous %}
+                    <a href= "?page={{ inns.previous_page_number }}">{% trans "Anterior" %} &lt;&lt; </a>
+                {% endif %}
+
+                <span class="current">
+                    &nbsp;Page {{ inns.number }} of {{inns.paginator.num_pages }}
+                </span>
+
+                {% if inns.has_next %}
+                    <a href="?page={{ inns.next_page_number }}"> &gt;&gt; {% trans "Siguiente" %}</a>
+                {% endif %}
+            </span>
+        </div>
+        {% endif %}
+							</div>
+						</article>
+		{% block visits %}{% endblock %}
+
+{% endblock %}
+

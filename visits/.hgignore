@@ -1,0 +1,9 @@
+syntax: glob
+
+media/*
+*.idea
+*.DS_Store
+*.pyc
+*.idea
+*.db
+*.txt

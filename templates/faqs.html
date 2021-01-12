@@ -1,0 +1,28 @@
+{% extends "index.html" %}
+{% load visits_tags %}
+{% load i18n %}
+{% block banner %}{% endblock %}
+{% block aside %}{% endblock %}
+{% block content %}
+<!--==============================content================================-->
+                <section id="content">
+					<div class="wrapper">
+						<article class="col-1">
+							<div class="indent-left">
+								<h3 class="prev-indent-bot">{% trans 'Preguntas frecuentes' %}</h3>
+								{% for faq in faqs %}
+								<h6>{{ faq.question }} </h6>
+								<p class="prev-indent-bot">{{ faq.answer|safe }}</p>
+								{% endfor %}
+							</div>
+						</article>
+						<article class="col-2">
+							<h3 class="p1">{% trans 'Lista de preguntas' %}</h3>
+							<ul class="list-2">
+								{% for faq in faqs %}
+								<li><a href="#">{{ faq.question }}</a></li>
+								{% endfor %}
+							</ul>
+						</article>
+						{% block visits %}{% endblock %}
+			{% endblock %}

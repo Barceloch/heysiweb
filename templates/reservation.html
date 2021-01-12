@@ -1,0 +1,110 @@
+{% extends "index.html" %}
+{% load i18n %}
+{% block head %}
+		<!-- it works the same with all jquery version from 1.x to 2.x -->
+        <script type="text/javascript" src="{{ STATIC_URL }}js2/jquery-1.js"></script>
+        <!--script type="text/javascript" src="{{ STATIC_URL }}js/utils.js"></script-->
+        <script type="text/javascript" src="{{ STATIC_URL }}js2/jquery-1.9.1.min.js"></script>
+        <!-- use jssor.slider.mini.js (39KB) or jssor.sliderc.mini.js (31KB, with caption, no slideshow) or jssor.sliders.mini.js (26KB, no caption, no slideshow) instead for release -->
+        <!-- jssor.slider.mini.js = jssor.sliderc.mini.js = jssor.sliders.mini.js = (jssor.core.js + jssor.utils.js + jssor.slider.js) -->
+        <!--script type="text/javascript" src="{{ STATIC_URL }}admin/js/jquery.js"></script-->
+        <script type="text/javascript" src="{{ STATIC_URL }}js2/jssor.core.js"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}js2/jssor.utils.js"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}js2/jssor.slider.js"></script>
+        <!--script type="text/javascript" src="{{ STATIC_URL }}js2/banner_slider.js"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}js2/slider_menu_nav.js"></script-->
+        <script type="text/javascript" src="{{ STATIC_URL }}js2/album.js"></script>
+
+{% endblock %}
+
+{% block banner %}{% endblock %}
+{% block aside %}{% endblock %}
+{% block content %}
+<!--==============================content================================-->
+                <section id="content">
+					<div class="wrapper">
+						<article class="col-1">
+							<div class="indent-left">
+
+                                <!-- ***Reservaciones*** -->                                
+							    {% if inn.bookroom_set.all %}
+                                <h3>{% trans "Reservaciones" %}: <a href="/{{ inn.machine_name }}" >{{ inn.name }}</a></h3>
+                                <div class="comments">
+                                {% for reservation in inn.bookroom_set.all %}
+                                {% if reservation.is_public %}
+                                 <span>
+                                  <font COLOR="blue"><strong><!--a href="mailto:{{ reservation.email }}"-->{{ reservation.name }}<!--/a--></strong></font> <em>ha enviado reservacion desde {{ reservation.country }} / {{ reservation.created_on }}</em>
+                                 </span>
+                                 <p><strong>{% trans 'Fecha de llegada: ' %}</strong>{{ reservation.date_in|date:"SHORT_DATE_FORMAT" }} - <strong>{% trans 'Fecha de salida: ' %}</strong>{{ reservation.date_out|date:"SHORT_DATE_FORMAT" }}</p>
+                                 <p><strong>{% trans 'Cantiad de personas: ' %}</strong>{{ reservation.paxs }} - <strong>{% trans 'Cantidad de habitaciones: ' %}</strong>{{ reservation.rooms }}</p>
+                                 <p>{{ reservation.text }}</p>
+                                 <h4>{% trans 'Estado' %}:</h4>
+                                 {% if reservation.is_confirmed %}
+                                    <font COLOR="green"><strong>Reservación CONFIRMADA!</strong></font>
+                                 {% else %}
+                                    {% for rkey in reservation.reservationkey_set.all %}
+                                    {% if rkey.s_confirmed %}
+                                        <font COLOR="red"><strong>Esperando confirmación de: {{ reservation.name }} </strong></font>
+                                        <font COLOR="green"><strong>{{ inn.name }} ya ha confirmado </strong></font>
+                                        <a class="confirm" href="{{ reservation.id }}" >{% trans 'Confirmar' %}</a>
+
+                                    {% else %}
+                                        <font COLOR="red"><strong>Esperando confirmación de: {{ inn.name }}</strong></font>
+                                        <a class="confirm" href="{{ reservation.id }}" >{% trans 'Confirmar' %}</a>
+                                    {% endif %}
+                                    {% endfor %}
+                                    {% endif %}
+                                 {% endif %}
+                                 <hr />
+                                 {% endfor %}
+							     </div>
+                                 {% endif %}
+                                 <br />
+                                 <h3>{% trans "Crear reservacion para el " %} {{ inn.name }}</h3>
+                                 <h6>{% trans "LEER!" %}</h6>
+                                {% blocktrans %}
+                                <p>Las reservaciones son revisadas por el administrador antes de ser publicadas. Este proceso puede tardar hasta 24 horas.</p>
+                                <p>Al crear una reservación, automáticamente se les enviará un código de confirmación al cliente y al propietario de servicio solicitado.</p>
+                                <p>Primero debe confirmar la reservación el propietario del servicio y luego el cliente que lo ha solicitado.</p>
+                                <p>Cada vez que se haga una confirmación, usted recibirá un email de notificación, en la sesión “Estado” de la reservación enviada podrá darle seguimiento a la misma.</p>
+                                {% endblocktrans %}
+                                 <h6><strong>{{msg_form}}</strong></h6>
+                                 <form id="form" action="" method="POST" style="line-height: 15px;">
+									 <fieldset>
+										{% csrf_token %}
+                                  <table>
+                                   {{ form.as_table }}
+                                  </table>
+										<div class="buttons">
+											<a class="button-2" href="#" onClick="document.getElementById('form').reset()">{% trans 'Limpiar' %}</a>
+											<a class="button-2" href="#" onClick="document.getElementById('form').submit()">{% trans 'Enviar' %}</a>
+											<!--input class="button-2" type="submit" name="submit" value="{% trans 'Publicar' %}" />
+											<input class="button-2" type="reset" name="reset" value="{% trans 'Limpiar' %}" /-->
+										</div>
+									</fieldset>
+
+                                 </form>                           
+                            
+							</div>
+						</article>
+						{% if inn.bookroom_set.all %}
+						<article class="col-2">
+						<h3 class="p1">{% trans 'Reservaciones' %}</h3>
+							<ul class="list-1">
+								{% for broom in inn.bookroom_set.all %}
+								{% if broom.is_public %}
+			                     <li><a href="{{ broom.id }}">{{ broom.name}} - {{ broom.created_on|date:"SHORT_DATE_FORMAT" }}</a></li>
+			                     {% endif %}
+			                    {% endfor %}
+							</ul>
+						</article>
+						{% else %}
+						<article class="col-2">
+						<h3 class="p1">{% trans 'Reservaciones' %}</h3>
+							<ul class="list-1">
+			                     <li>{% trans 'Ninguna' %}</li>			                     
+							</ul>
+						</article>
+					{% endif %}	
+{% endblock %}
+

@@ -1,0 +1,234 @@
+{% extends "index.html" %}
+{% load i18n %}
+{% block head %}
+		<!-- it works the same with all jquery version from 1.x to 2.x -->
+        <script type="text/javascript" src="{{ STATIC_URL }}js2/jquery-1.js"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}js2/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}js2/jssor.core.js"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}js2/jssor.utils.js"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}js2/jssor.slider.js"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}js2/album.js"></script>
+
+{% endblock %}
+
+{% block banner %}{% endblock %}
+{% block aside %}{% endblock %}
+{% block content %}
+<!--==============================content================================-->
+                <section id="content">
+					<div class="wrapper">
+						<article class="col-1">
+							<div class="indent-left">
+								{% if inn.is_public %}
+								<h3>{{ inn.name }}</h3>
+								<h6 class="prev-indent-bot">Trinidad, Sancti Spíritus, Cuba</h6>				
+								<p class="prev-indent-bot"><img align=right src="/static/{{ inn.inn_img }}" width=300 height=200 alt="" />
+								<i class="detailbox"><font color="#053961"><b>{% trans "Dueño: " %}</b></font>{{ inn.owner }}<br />
+								<font color="#053961"><b>{% trans "Habitaciones: " %}</b></font>{{ inn.rooms }}<br />
+								
+								{% if inn.high_season %}
+                                <font color="#053961"><b>{% trans "Precio por habitaciones: " %}</b></font>{{ inn.max_price }} cuc<br />
+                                {% else %}
+                                <font color="#053961"><b>{% trans "Precio por habitaciones: " %}</b></font>{{ inn.min_price }} cuc<br />
+                                {% endif %}
+                                <!--font color="#053961"><b>{% trans "Teléfono: " %}</b></font>{{ inn.phone }}<br />
+                                <font color="#053961"><b>{% trans "Movil: " %}</b></font>{{ inn.movil }}<br /-->
+                                <font color="#053961"><b>{% trans "Dirección: " %}</b></font>{{ inn.address }}</i><br />
+                                <em><a class="book" href="/{{ inn.machine_name }}/reservacion">{% trans "RESERVAR AHORA!" %}</a></em>
+                                {{ inn.details|safe }}</p>
+                                
+								<!-- ***Galeria de fotos*** -->
+								<hr />
+								{% if inn.album %}
+  <h3>Galería de Imágenes</h3>
+  <!-- Jssor Slider Begin -->
+    <!-- You can move inline styles to css file or css block. -->
+    <div id="slider1_container_album" style="position: relative; top: 0px; left: 0px; width: 810px; height: 300px; background: #000; overflow: hidden; ">
+
+        <!-- Loading Screen -->
+        <div u="loading" style="position: absolute; top: 0px; left: 0px;">
+            <div style="filter: alpha(opacity=70); opacity:0.7; position: absolute; display: block;
+                background-color: #000000; top: 0px; left: 0px;width: 100%;height:100%;">
+            </div>
+            <div style="position: absolute; display: block; background: url(/static/images/loading.gif) no-repeat center center;
+                top: 0px; left: 0px;width: 100%;height:100%;">
+            </div>
+        </div>
+
+        <!-- Slides Container -->
+        <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 600px; height: 300px;
+            overflow: hidden;">
+            {% for img in inn.album.image_set.all %}
+            <div>
+                <img u="image" src="/static/{{ img.image }}" />
+                <div u="thumb">
+                    <img class="i" src="/static/{{ img.image.album_img_thumb.url }}" /><div class="t">{{ img.title }}</div>
+                    <div class="c">{{ img.description }}</div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- ThumbnailNavigator Skin Begin -->
+        <div u="thumbnavigator" class="jssort11" style="position: absolute; width: 200px; height: 300px; left:605px; top:0px;">
+            <!-- Thumbnail Item Skin Begin -->
+            <style>
+                /* jssor slider thumbnail navigator skin 11 css */
+                /*
+                .jssort11 .p            (normal)
+                .jssort11 .p:hover      (normal mouseover)
+                .jssort11 .pav          (active)
+                .jssort11 .pav:hover    (active mouseover)
+                .jssort11 .pdn          (mousedown)
+                */
+                .jssort11
+                {
+                	font-family: Arial, Helvetica, sans-serif;
+                }
+                .jssort11 .i, .jssort11 .pav:hover .i
+                {
+                	position: absolute;
+                	top:3px;
+                	left:3px;
+                	WIDTH: 60px;
+                	HEIGHT: 30px;
+                	border: white 1px dashed;
+                }
+                * html .jssort11 .i
+                {
+                	WIDTH /**/: 62px;
+                	HEIGHT /**/: 32px;
+                }
+                .jssort11 .pav .i
+                {
+                	border: white 1px solid;
+                }
+                .jssort11 .t, .jssort11 .pav:hover .t
+                {
+                	position: absolute;
+                	top: 3px;
+                	left: 68px;
+                	width:129px;
+                	height: 32px;
+                	line-height:32px;
+                	text-align: center;
+                	color:#fc9835;
+                	font-size:13px;
+                	font-weight:700;
+                }
+                .jssort11 .pav .t, .jssort11 .phv .t, .jssort11 .p:hover .t
+                {
+                	color:#fff;
+                }
+                .jssort11 .c, .jssort11 .pav:hover .c
+                {
+                	position: absolute;
+                	top: 38px;
+                	left: 3px;
+                	width:197px;
+                	height: 31px;
+                	line-height:31px;
+                	color:#fff;
+                	font-size:11px;
+                	font-weight:400;
+                	overflow: hidden;
+                }
+                .jssort11 .pav .c, .jssort11 .phv .c, .jssort11 .p:hover .c
+                {
+                	color:#fc9835;
+                }
+                .jssort11 .t, .jssort11 .c
+                {
+                	transition: color 2s;
+                    -moz-transition: color 2s;
+                    -webkit-transition: color 2s;
+                    -o-transition: color 2s;
+                }
+                .jssort11 .p:hover .t, .jssort11 .phv .t, .jssort11 .pav:hover .t, .jssort11 .p:hover .c, .jssort11 .phv .c, .jssort11 .pav:hover .c
+                {
+                	transition: none;
+                    -moz-transition: none;
+                    -webkit-transition: none;
+                    -o-transition: none;
+                }
+                .jssort11 .p
+                {
+                	background:#181818;
+                }
+                .jssort11 .pav, .jssort11 .pdn
+                {
+                	background:#462300;
+                }
+                .jssort11 .p:hover, .jssort11 .phv, .jssort11 .pav:hover
+                {
+                	background:#333;
+                }
+            </style>
+            <div u="slides" style="cursor: move;">
+                <div u="prototype" class="p" style="position: absolute; width: 200px; height: 69px; top: 0; left: 0;">
+                    <thumbnailtemplate style=" width: 100%; height: 100%; border: none;position:absolute; top: 0; left: 0;"></thumbnailtemplate>
+                </div>
+            </div>
+            <!-- Thumbnail Item Skin End -->
+        </div>
+        <!-- ThumbnailNavigator Skin End -->
+        <a style="display: none" href="http://www.jssor.com">javascript</a>
+    </div>
+    <!-- Jssor Slider End -->
+    {% endif %}
+    
+                                <!-- ***COMENTARIOS*** -->
+                                <hr />
+							    {% if inn.comment_set.all %}
+                                <h3>{% trans "Comentarios" %}</h3>
+                                <div class="comments">
+                                {% for comment in inn.comment_set.all %}
+                                {% if comment.is_public %}
+                                 <span>
+                                  <font COLOR="blue"><strong><a href="mailto:{{ comment.email }}">{{ comment.name }}</a></strong></font> <em>a comentado desde {{ comment.country }} / {{ comment.created_on }}</em>
+                                 </span>
+                                 <p>{{ comment.text }}</p>
+                                 {% endif %}
+                                 {% endfor %}
+                                 </div>
+                                 {% endif %}
+                                 <br />
+                                 <h3>{% trans "Agregar comentario" %}</h3>
+                                 <h6>{% trans "LEER!" %}</h6>
+                                {% blocktrans %}Los comentarios son revisados por el administrador antes de ser publicados. Este proceso puede tardar hasta 24 horas.{% endblocktrans %}
+                                 <h6><strong>{{msg_form}}</strong></h6>
+                                 <form id="form" action="" method="POST">
+									 <fieldset>
+										{% csrf_token %}
+                                  <table>
+                                   {{ form.as_table }}
+                                  </table>
+										<div class="buttons">
+											<a class="button-2" href="" onClick="document.getElementById('form').reset()">{% trans 'Limpiar' %}</a>
+											<a class="button-2" href="" onClick="document.getElementById('form').submit()">{% trans 'Publicar' %}</a>
+										</div>
+									</fieldset>
+                                 </form>
+
+							</div>
+							{% else %}
+							<h3>{% trans "Este servicio aún no está visible" %}</h3>
+							<p>{% trans "Sí usted es el dueño de este servicio, debe contactar al administrador del sitio." %}</p>
+							{% endif %}
+						</article>
+	 					
+						<article class="col-2">
+						<h3 class="p1">{% trans 'Reservaciones' %}</h3>
+							<ul class="list-1">
+								<li><a href="/{{ inn.machine_name }}/reservacion">{% trans 'Reservar/Ver todas...' %}</a></li>
+								{% for broom in inn.bookroom_set.all %}
+								{% if broom.is_public %}
+			                     <li><a href="/{{ inn.machine_name }}/reservacion/{{ broom.id }}">{{ broom.name}} - {{ broom.created_on|date:"SHORT_DATE_FORMAT" }}</a></li>
+			                     {% endif %}
+			                    {% endfor %}
+							</ul>
+						</article>
+						
+
+{% endblock %}
+

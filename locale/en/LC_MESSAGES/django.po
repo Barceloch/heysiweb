@@ -1,0 +1,728 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-10-22 13:00-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .\forms.py:7
+msgid "Asunto:"
+msgstr "Subject:"
+
+#: .\forms.py:8
+msgid "Mensaje:"
+msgstr "Message"
+
+#: .\forms.py:9
+msgid "De: (su Email)"
+msgstr "From: (your email)"
+
+#: .\forms.py:11 .\inns\forms.py:15
+msgid "Escriba los caracteres de la imágen"
+msgstr "Write the chars of the image"
+
+#: .\settings.py:61
+msgid "Español"
+msgstr "Spanish"
+
+#: .\settings.py:62
+msgid "Inglés"
+msgstr "English"
+
+#: .\views.py:32
+msgid "Su mensage ha sido enviado correctamente"
+msgstr "Your message has been sent correctly"
+
+#: .\captcha\fields.py:87
+msgid "Play CAPTCHA as audio file"
+msgstr ""
+
+#: .\captcha\fields.py:100 .\captcha\fields.py:129 .\captcha\tests\tests.py:99
+#: .\captcha\tests\tests.py:239 .\captcha\tests\tests.py:246
+msgid "Invalid CAPTCHA"
+msgstr ""
+
+#: .\captcha\tests\tests.py:125
+msgid "This field is required."
+msgstr ""
+
+#: .\django_wysiwyg\templates\django_wysiwyg\yui\includes.html.py:57
+#: .\django_wysiwyg\templates\django_wysiwyg\yui_advanced\includes.html.py:20
+msgid "Font Name and Size"
+msgstr ""
+
+#: .\django_wysiwyg\templates\django_wysiwyg\yui\includes.html.py:82
+#: .\django_wysiwyg\templates\django_wysiwyg\yui_advanced\includes.html.py:45
+msgid "Font Style"
+msgstr ""
+
+#: .\django_wysiwyg\templates\django_wysiwyg\yui\includes.html.py:84
+#: .\django_wysiwyg\templates\django_wysiwyg\yui_advanced\includes.html.py:47
+msgid "Bold CTRL + SHIFT + B"
+msgstr ""
+
+#: .\django_wysiwyg\templates\django_wysiwyg\yui\includes.html.py:85
+#: .\django_wysiwyg\templates\django_wysiwyg\yui_advanced\includes.html.py:48
+msgid "Italic CTRL + SHIFT + I"
+msgstr ""
+
+#: .\django_wysiwyg\templates\django_wysiwyg\yui\includes.html.py:86
+#: .\django_wysiwyg\templates\django_wysiwyg\yui_advanced\includes.html.py:49
+msgid "Underline CTRL + SHIFT + U"
+msgstr ""
+
+#: .\django_wysiwyg\templates\django_wysiwyg\yui\includes.html.py:88
+#: .\django_wysiwyg\templates\django_wysiwyg\yui_advanced\includes.html.py:54
+msgid "Font Color"
+msgstr ""
+
+#: .\django_wysiwyg\templates\django_wysiwyg\yui\includes.html.py:89
+#: .\django_wysiwyg\templates\django_wysiwyg\yui_advanced\includes.html.py:55
+msgid "Background Color"
+msgstr ""
+
+#: .\django_wysiwyg\templates\django_wysiwyg\yui\includes.html.py:97
+#: .\django_wysiwyg\templates\django_wysiwyg\yui_advanced\includes.html.py:91
+msgid "Lists"
+msgstr ""
+
+#: .\django_wysiwyg\templates\django_wysiwyg\yui\includes.html.py:99
+#: .\django_wysiwyg\templates\django_wysiwyg\yui_advanced\includes.html.py:95
+msgid "Create an Unordered List"
+msgstr ""
+
+#: .\django_wysiwyg\templates\django_wysiwyg\yui\includes.html.py:100
+#: .\django_wysiwyg\templates\django_wysiwyg\yui_advanced\includes.html.py:96
+msgid "Create an Ordered List"
+msgstr ""
+
+#: .\django_wysiwyg\templates\django_wysiwyg\yui\includes.html.py:108
+#: .\django_wysiwyg\templates\django_wysiwyg\yui_advanced\includes.html.py:104
+msgid "Insert Item"
+msgstr ""
+
+#: .\django_wysiwyg\templates\django_wysiwyg\yui\includes.html.py:110
+#: .\django_wysiwyg\templates\django_wysiwyg\yui_advanced\includes.html.py:106
+msgid "HTML Link CTRL + SHIFT + L"
+msgstr ""
+
+#: .\django_wysiwyg\templates\django_wysiwyg\yui\includes.html.py:111
+#: .\django_wysiwyg\templates\django_wysiwyg\yui_advanced\includes.html.py:107
+msgid "Insert Image"
+msgstr ""
+
+#: .\django_wysiwyg\templates\django_wysiwyg\yui_advanced\includes.html.py:51
+msgid "Subscript"
+msgstr ""
+
+#: .\django_wysiwyg\templates\django_wysiwyg\yui_advanced\includes.html.py:52
+msgid "Superscript"
+msgstr ""
+
+#: .\django_wysiwyg\templates\django_wysiwyg\yui_advanced\includes.html.py:57
+msgid "Remove Formatting"
+msgstr ""
+
+#: .\django_wysiwyg\templates\django_wysiwyg\yui_advanced\includes.html.py:58
+msgid "Show/Hide Hidden Elements"
+msgstr ""
+
+#: .\django_wysiwyg\templates\django_wysiwyg\yui_advanced\includes.html.py:64
+msgid "Align Left CTRL + SHIFT + ["
+msgstr ""
+
+#: .\django_wysiwyg\templates\django_wysiwyg\yui_advanced\includes.html.py:65
+msgid "Align Center CTRL + SHIFT + |"
+msgstr ""
+
+#: .\django_wysiwyg\templates\django_wysiwyg\yui_advanced\includes.html.py:66
+msgid "Align Right CTRL + SHIFT + ]"
+msgstr ""
+
+#: .\django_wysiwyg\templates\django_wysiwyg\yui_advanced\includes.html.py:67
+msgid "Justify"
+msgstr ""
+
+#: .\django_wysiwyg\templates\django_wysiwyg\yui_advanced\includes.html.py:71
+msgid "Paragraph Style"
+msgstr ""
+
+#: .\django_wysiwyg\templates\django_wysiwyg\yui_advanced\includes.html.py:73
+#: .\django_wysiwyg\templates\django_wysiwyg\yui_advanced\includes.html.py:75
+msgid "Normal"
+msgstr ""
+
+#: .\django_wysiwyg\templates\django_wysiwyg\yui_advanced\includes.html.py:76
+msgid "Header 1"
+msgstr ""
+
+#: .\django_wysiwyg\templates\django_wysiwyg\yui_advanced\includes.html.py:77
+msgid "Header 2"
+msgstr ""
+
+#: .\django_wysiwyg\templates\django_wysiwyg\yui_advanced\includes.html.py:78
+msgid "Header 3"
+msgstr ""
+
+#: .\django_wysiwyg\templates\django_wysiwyg\yui_advanced\includes.html.py:79
+msgid "Header 4"
+msgstr ""
+
+#: .\django_wysiwyg\templates\django_wysiwyg\yui_advanced\includes.html.py:80
+msgid "Header 5"
+msgstr ""
+
+#: .\django_wysiwyg\templates\django_wysiwyg\yui_advanced\includes.html.py:81
+msgid "Header 6"
+msgstr ""
+
+#: .\django_wysiwyg\templates\django_wysiwyg\yui_advanced\includes.html.py:93
+msgid "Indent"
+msgstr ""
+
+#: .\django_wysiwyg\templates\django_wysiwyg\yui_advanced\includes.html.py:94
+msgid "Outdent"
+msgstr ""
+
+#: .\inns\forms.py:27
+msgid "Código del hostal:"
+msgstr "Inn code"
+
+#: .\inns\forms.py:27
+msgid "Debe ingresar el código de confirmación"
+msgstr "You should enter the code of confirmation"
+
+#: .\inns\forms.py:32 .\inns\forms.py:42
+msgid "El código es incorrecto"
+msgstr "Invalid code"
+
+#: .\inns\forms.py:36
+msgid "Código del cliente:"
+msgstr "Client code"
+
+#: .\inns\forms.py:36
+msgid "Debe ingresar el codigo de confirmación"
+msgstr "You should enter the code of confirmation"
+
+#: .\inns\models.py:14 .\inns\models.py:26 .\inns\models.py:71
+#: .\inns\models.py:87
+msgid "Nombre"
+msgstr "Name"
+
+#: .\inns\models.py:17 .\inns\models.py:58
+msgid "Galería de fotos"
+msgstr "Gallery of images"
+
+#: .\inns\models.py:18
+msgid "Galerías de fotos"
+msgstr "Gallerys of images"
+
+#: .\inns\models.py:27
+msgid "Descripción"
+msgstr "Description"
+
+#: .\inns\models.py:29 .\inns\models.py:32 .\inns\models.py:56
+#: .\itemssite\models.py:12 .\itemssite\models.py:25
+msgid "Imágen"
+msgstr "Image"
+
+#: .\inns\models.py:33
+msgid "Imágenes"
+msgstr "Images"
+
+#: .\inns\models.py:42
+msgid "Nombre del Hostal"
+msgstr "Inn name"
+
+#: .\inns\models.py:43
+msgid "Dueño"
+msgstr "Owner"
+
+#: .\inns\models.py:44
+msgid "Dirección"
+msgstr "Address"
+
+#: .\inns\models.py:46
+msgid "Mapa"
+msgstr "Map"
+
+#: .\inns\models.py:47
+msgid "Teléfono"
+msgstr "Phone"
+
+#: .\inns\models.py:48
+msgid "Movil"
+msgstr ""
+
+#: .\inns\models.py:49 .\inns\models.py:72 .\inns\models.py:88
+msgid "E-mail"
+msgstr ""
+
+#: .\inns\models.py:50 .\itemssite\models.py:9
+msgid "Link"
+msgstr ""
+
+#: .\inns\models.py:51
+msgid "Cantidad de habitaciones"
+msgstr "Quantity of rooms"
+
+#: .\inns\models.py:52
+msgid "Temporada de alsa"
+msgstr "Hihg season"
+
+#: .\inns\models.py:53
+msgid "Precio en baja"
+msgstr "Low season"
+
+#: .\inns\models.py:54
+msgid "Precio en alsa"
+msgstr "Hihg price"
+
+#: .\inns\models.py:57 .\itemssite\models.py:10 .\itemssite\models.py:24
+#: .\itemssite\models.py:37 .\itemssite\models.py:38
+msgid "Detalles"
+msgstr "Details"
+
+#: .\inns\models.py:59
+msgid "Es premium"
+msgstr "Is premium"
+
+#: .\inns\models.py:60 .\inns\models.py:77 .\inns\models.py:97
+#: .\templates\add_inn_form.html.py:40 .\templates\contact.html.py:39
+#: .\templates\reservation.html.py:81 .\templates\viewinn.html.py:208
+msgid "Publicar"
+msgstr "Publish"
+
+#: .\inns\models.py:63 .\inns\models.py:75 .\inns\models.py:95
+msgid "Hostal"
+msgstr "Inn"
+
+#: .\inns\models.py:64 .\templates\index.html.py:84
+msgid "Hostales"
+msgstr "Inns"
+
+#: .\inns\models.py:73 .\inns\models.py:89
+msgid "País"
+msgstr "Country"
+
+#: .\inns\models.py:74 .\inns\models.py:80
+msgid "Comentario"
+msgstr "Comment"
+
+#: .\inns\models.py:76 .\inns\models.py:98
+msgid "Fecha"
+msgstr "Date"
+
+#: .\inns\models.py:90
+msgid "Fecha de llegada"
+msgstr "In date"
+
+#: .\inns\models.py:91
+msgid "Fecha de salida"
+msgstr "out date"
+
+#: .\inns\models.py:92
+msgid "Personas"
+msgstr "Paxs"
+
+#: .\inns\models.py:93
+msgid "Habitaciones"
+msgstr "Rooms"
+
+#: .\inns\models.py:94
+msgid "Mensaje"
+msgstr "Message"
+
+#: .\inns\models.py:96
+msgid "Confirmada"
+msgstr "Confirmed"
+
+#: .\inns\models.py:101 .\inns\models.py:112
+msgid "Reservación"
+msgstr "Reservation"
+
+#: .\inns\models.py:102 .\templates\add_inn_form.html.py:51
+#: .\templates\contact.html.py:49 .\templates\reservation.html.py:31
+#: .\templates\reservation.html.py:92 .\templates\reservation.html.py:103
+#: .\templates\viewinn.html.py:221
+msgid "Reservaciones"
+msgstr "Reservations"
+
+#: .\inns\models.py:108
+msgid "Código del hostal"
+msgstr "Inn code"
+
+#: .\inns\models.py:109
+msgid "El hostal ha confirmado"
+msgstr "The inn has confirmed"
+
+#: .\inns\models.py:110
+msgid "Código del Cliente"
+msgstr "Client code"
+
+#: .\inns\models.py:111
+msgid "El cliente ha confirmado"
+msgstr "The client has confirmed"
+
+#: .\inns\models.py:115
+msgid "Código de reservación"
+msgstr "Reservation code"
+
+#: .\inns\models.py:116
+msgid "Códigos de reservaciones"
+msgstr "Reservation codes"
+
+#: .\inns\views.py:53
+msgid "Su comentario ha sido enviado correctamente"
+msgstr "Your comment has been kept correctly"
+
+#: .\inns\views.py:118
+msgid "Su reservación ha sido enviada correctamente"
+msgstr "Your reservation has been sent correctly"
+
+#: .\itemssite\models.py:8 .\itemssite\models.py:22 .\itemssite\models.py:36
+msgid "Título"
+msgstr "Title"
+
+#: .\itemssite\models.py:15
+msgid "Objeto del banner"
+msgstr "Item of banner"
+
+#: .\itemssite\models.py:16
+msgid "Objetos del banner"
+msgstr "Items of banner"
+
+#: .\itemssite\models.py:23
+msgid "Descrition"
+msgstr ""
+
+#: .\itemssite\models.py:26 .\itemssite\models.py:39 .\itemssite\models.py:52
+msgid "Idioma"
+msgstr "Language"
+
+#: .\itemssite\models.py:29
+msgid "Post de inicio"
+msgstr "Home post"
+
+#: .\itemssite\models.py:30
+msgid "Posts de inicio"
+msgstr "Home posts"
+
+#: .\itemssite\models.py:43
+msgid "Servicio HeySi"
+msgstr "heySí service"
+
+#: .\itemssite\models.py:44
+msgid "Servicios HeySi"
+msgstr "heySí services"
+
+#: .\itemssite\models.py:50
+msgid "Pregunta"
+msgstr "Question"
+
+#: .\itemssite\models.py:51
+msgid "Respuesta"
+msgstr "Anwer"
+
+#: .\itemssite\models.py:56
+msgid "Pregunta frecuente"
+msgstr "Frequently asked question"
+
+#: .\itemssite\models.py:57 .\templates\faqs.html.py:12
+msgid "Preguntas frecuentes"
+msgstr "Questions"
+
+#: .\templates\add_inn_form.html.py:28
+msgid "Añadir Hostal"
+msgstr "Add Inn"
+
+#: .\templates\add_inn_form.html.py:38 .\templates\add_inn_form.html.py:41
+#: .\templates\contact.html.py:37 .\templates\contact.html.py:40
+#: .\templates\reservation.html.py:79 .\templates\reservation.html.py:82
+#: .\templates\viewinn.html.py:207
+msgid "Limpiar"
+msgstr "Clear"
+
+#: .\templates\add_inn_form.html.py:39
+msgid "Guardar"
+msgstr "Save"
+
+#: .\templates\confirmation.html.py:35 .\templates\reservation.html.py:38
+msgid "Fecha de llegada: "
+msgstr "Date in: "
+
+#: .\templates\confirmation.html.py:35 .\templates\reservation.html.py:38
+msgid "Fecha de salida: "
+msgstr "Date out: "
+
+#: .\templates\confirmation.html.py:36 .\templates\reservation.html.py:39
+msgid "Cantiad de personas: "
+msgstr "Quantity of paxs: "
+
+#: .\templates\confirmation.html.py:36 .\templates\reservation.html.py:39
+msgid "Cantidad de habitaciones: "
+msgstr "Quantity of rooms: "
+
+#: .\templates\confirmation.html.py:38 .\templates\reservation.html.py:41
+msgid "Estado"
+msgstr "Statu"
+
+#: .\templates\confirmation.html.py:54 .\templates\confirmation.html.py:72
+#: .\templates\reservation.html.py:49 .\templates\reservation.html.py:53
+msgid "Confirmar"
+msgstr "Confirmate"
+
+#: .\templates\contact.html.py:27
+msgid "Contactar"
+msgstr "Contact"
+
+#: .\templates\contact.html.py:38 .\templates\reservation.html.py:80
+msgid "Enviar"
+msgstr "Send"
+
+#: .\templates\faqs.html.py:20
+msgid "Lista de preguntas"
+msgstr "List of questions"
+
+#: .\templates\index.html.py:8
+msgid "heySí! - Trinidad de Cuba, promoción y búsqueda hostales para hospedaje"
+msgstr "heySí! - Trinidad of Cuba, promotion and search for inn an lodging"
+
+#: .\templates\index.html.py:76
+msgid "ir"
+msgstr "go"
+
+#: .\templates\index.html.py:83
+msgid "Inicio"
+msgstr "Home"
+
+#: .\templates\index.html.py:87
+msgid "Equipos"
+msgstr ""
+
+#: .\templates\index.html.py:88
+msgid "Contacto"
+msgstr "Contact"
+
+#: .\templates\index.html.py:156
+msgid "Reservación de habitaciones"
+msgstr "Book room"
+
+#: .\templates\index.html.py:160
+msgid "Reservar habitaciones en las hostales"
+msgstr "To reserve rooms for lodging"
+
+#: .\templates\index.html.py:161
+msgid ""
+"heySí le brinda un sistema para la reservación de habitaciones en el hostal "
+"de su preferencia"
+msgstr ""
+"heySí offers him a system for the reservation of rooms in the inn of its "
+"preference"
+
+#: .\templates\index.html.py:189
+msgid "Menú"
+msgstr "Menu"
+
+#: .\templates\index.html.py:191
+msgid "Todas las hostales"
+msgstr "All Inns"
+
+#: .\templates\index.html.py:192
+msgid "Agregar Hostal"
+msgstr "Add Inn"
+
+#: .\templates\index.html.py:215
+msgid "Visitas"
+msgstr "Visits"
+
+#: .\templates\index.html.py:230
+msgid "Desarrollado por"
+msgstr "Developed by"
+
+#: .\templates\index.html.py:231
+msgid "Con:"
+msgstr "With:"
+
+#: .\templates\index.html.py:232
+msgid "Plantilla del sitio por"
+msgstr "Template by"
+
+#: .\templates\inns.html.py:12
+msgid "Lista de Hostales"
+msgstr "Inn list"
+
+#: .\templates\inns.html.py:13
+msgid "Haga click aquí para agregar su Hostal"
+msgstr "Clic here for add your inn"
+
+#: .\templates\inns.html.py:14
+msgid ""
+"Para reservar directamente haga clic en \"RESERVAR AHORA!\", para ver más "
+"detalles sobre un Hostal haga clic cualquier otro lugar"
+msgstr ""
+"To reserve directly you make click in \"BOOK NOW! \", to see moredetails on "
+"an Inn you makes click any other place"
+
+#: .\templates\inns.html.py:22
+msgid "Hospedaje"
+msgstr "Lodging"
+
+#: .\templates\inns.html.py:24 .\templates\viewinn.html.py:27
+msgid "Habitaciones: "
+msgstr "Rooms: "
+
+#: .\templates\inns.html.py:25
+msgid "Precio por habitación"
+msgstr "Price for rooms"
+
+#: .\templates\inns.html.py:27 .\templates\inns.html.py:29
+msgid " cuc"
+msgstr ""
+
+#: .\templates\inns.html.py:31 .\templates\viewinn.html.py:37
+msgid "RESERVAR AHORA!"
+msgstr "BOOK NOW!"
+
+#: .\templates\inns.html.py:33 .\templates\viewinn.html.py:26
+msgid "Dueño: "
+msgstr "Owner: "
+
+#: .\templates\inns.html.py:34 .\templates\viewinn.html.py:34
+msgid "Teléfono: "
+msgstr "Phone: "
+
+#: .\templates\inns.html.py:35 .\templates\viewinn.html.py:35
+msgid "Movil: "
+msgstr ""
+
+#: .\templates\inns.html.py:36 .\templates\viewinn.html.py:36
+msgid "Dirección: "
+msgstr "Address: "
+
+#: .\templates\inns.html.py:40 .\templates\inns.html.py:42
+msgid "Visitas: "
+msgstr "Visits: "
+
+#: .\templates\inns.html.py:47
+msgid "No está visible"
+msgstr "Not is public yet"
+
+#: .\templates\inns.html.py:49
+msgid "ver más..."
+msgstr "see more..."
+
+#: .\templates\inns.html.py:61
+msgid "Anterior"
+msgstr "Back"
+
+#: .\templates\inns.html.py:69
+msgid "Siguiente"
+msgstr "Next"
+
+#: .\templates\reservation.html.py:63
+msgid "Crear reservacion para el "
+msgstr "Create reservation for"
+
+#: .\templates\reservation.html.py:64 .\templates\viewinn.html.py:197
+msgid "LEER!"
+msgstr "READ!"
+
+#: .\templates\reservation.html.py:65
+msgid ""
+"\n"
+"                                <p>Las reservaciones son revisadas por el "
+"administrador antes de ser publicadas. Este proceso puede tardar hasta 24 "
+"horas.</p>\n"
+"                                <p>Al crear una reservación, automáticamente "
+"se les enviará un código de confirmación al cliente y al propietario de "
+"servicio solicitado.</p>\n"
+"                                <p>Primero debe confirmar la reservación el "
+"propietario del servicio y luego el cliente que lo ha solicitado.</p>\n"
+"                                <p>Cada vez que se haga una confirmación, "
+"usted recibirá un email de notificación, en la sesión “Estado” de la "
+"reservación enviada podrá darle seguimiento a la misma.</p>\n"
+"                                "
+msgstr ""
+"\n"
+"<p>The reservations are revised by the administrator before being published. "
+"This process can take up to 24 hours.</p>\n"
+"<p>When creating a reservation, automatically they will be sent a code of "
+"confirmation to the client and the proprietor of requested service.</p>\n"
+"<p>First it should confirm the reservation the proprietor of the service and "
+"then the client that has requested it.</p>\n"
+"<p>Every time that a confirmation is made, you will receive a notification "
+"email, in the session of the sent reservation you will be able to give "
+"pursuit to the same one.</p>\n"
+" "
+
+#: .\templates\reservation.html.py:105
+msgid "Ninguna"
+msgstr "None"
+
+#: .\templates\viewinn.html.py:30 .\templates\viewinn.html.py:32
+msgid "Precio por habitaciones: "
+msgstr "Price for rooms: "
+
+#: .\templates\viewinn.html.py:183
+msgid "Comentarios"
+msgstr "Comments"
+
+#: .\templates\viewinn.html.py:196
+msgid "Agregar comentario"
+msgstr "Add Comment"
+
+#: .\templates\viewinn.html.py:198
+msgid ""
+"Los comentarios son revisados por el administrador antes de ser publicados. "
+"Este proceso puede tardar hasta 24 horas."
+msgstr ""
+"The comments are revised by the administrator before being published. This "
+"process can take up to 24 hours."
+
+#: .\templates\viewinn.html.py:215
+msgid "Este servicio aún no está visible"
+msgstr "Not is public yes"
+
+#: .\templates\viewinn.html.py:216
+msgid ""
+"Sí usted es el dueño de este servicio, debe contactar al administrador del "
+"sitio."
+msgstr "If you are owner for this inn, contact to the admin"
+
+#: .\templates\viewinn.html.py:223
+msgid "Reservar/Ver todas..."
+msgstr "Book/See all..."
+
+#: .\tinymce\views.py:74
+msgid "Error running spellchecker"
+msgstr ""
+
+#: .\visits\models.py:149
+msgid "visit"
+msgstr ""
+
+#: .\visits\models.py:150
+msgid "visits"
+msgstr ""
+
+#: .\visits\templatetags\visits_tags.py:44
+#, python-format
+msgid "%s tag requires exactly three arguments"
+msgstr ""
+
+#: .\visits\templatetags\visits_tags.py:48
+#, python-format
+msgid "second argument to %s tag must be 'as'"
+msgstr ""

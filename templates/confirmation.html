@@ -1,0 +1,87 @@
+{% extends "index.html" %}
+{% load i18n %}
+{% block head %}
+		<!-- it works the same with all jquery version from 1.x to 2.x -->
+        <script type="text/javascript" src="{{ STATIC_URL }}js2/jquery-1.js"></script>
+        <!--script type="text/javascript" src="{{ STATIC_URL }}js/utils.js"></script-->
+        <script type="text/javascript" src="{{ STATIC_URL }}js2/jquery-1.9.1.min.js"></script>
+        <!-- use jssor.slider.mini.js (39KB) or jssor.sliderc.mini.js (31KB, with caption, no slideshow) or jssor.sliders.mini.js (26KB, no caption, no slideshow) instead for release -->
+        <!-- jssor.slider.mini.js = jssor.sliderc.mini.js = jssor.sliders.mini.js = (jssor.core.js + jssor.utils.js + jssor.slider.js) -->
+        <!--script type="text/javascript" src="{{ STATIC_URL }}admin/js/jquery.js"></script-->
+        <script type="text/javascript" src="{{ STATIC_URL }}js2/jssor.core.js"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}js2/jssor.utils.js"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}js2/jssor.slider.js"></script>
+        <!--script type="text/javascript" src="{{ STATIC_URL }}js2/banner_slider.js"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}js2/slider_menu_nav.js"></script-->
+        <script type="text/javascript" src="{{ STATIC_URL }}js2/album.js"></script>
+{% endblock %}
+
+{% block banner %}{% endblock %}
+{% block aside %}{% endblock %}
+{% block content %}
+<!--==============================content================================-->
+                <section id="content">
+					<div class="wrapper">
+						<article class="col-1">
+							<div class="indent-left">
+
+                                <!-- ***Confirmation*** -->
+                                <h3>Reservación</h3>
+
+                                <div class="comments">
+                                 <span>
+                                  <font COLOR="blue"><strong><!--a href="mailto:{{ reservation.email }}"-->{{ reservation.name }}<!--/a--></strong></font> <em>ha enviado reservacion desde {{ reservation.country }} / {{ reservation.created_on }}</em>
+                                 </span>
+                                 <p><strong>{% trans 'Fecha de llegada: ' %}</strong>{{ reservation.date_in|date:"SHORT_DATE_FORMAT" }} - <strong>{% trans 'Fecha de salida: ' %}</strong>{{ reservation.date_out|date:"SHORT_DATE_FORMAT" }}</p>
+                                 <p><strong>{% trans 'Cantiad de personas: ' %}</strong>{{ reservation.paxs }} - <strong>{% trans 'Cantidad de habitaciones: ' %}</strong>{{ reservation.rooms }}</p>
+                                 <p>{{ reservation.text }}</p>
+                                 <h4>{% trans 'Estado' %}:</h4>
+                                 {% if reservation.is_confirmed %}
+                                    <font COLOR="green"><strong>Reservación CONFIRMADA!</strong></font>
+                                 {% else %}
+                                    {% if rk.s_confirmed %}
+                                        <font COLOR="red"><strong>Esperando confirmación de: {{ reservation.name }} </strong></font>
+                                        <font COLOR="green"><strong>{{ inn.name }} ya ha confirmado </strong></font>
+                                        <form id="form2" action="" method="POST">
+									    <fieldset>
+										    {% csrf_token %}
+                                         <table>
+									         <tr>
+										       <td>
+                                                 {{ form2 }}
+                                               </td>
+                                               <td>
+											      <a class="button-2" href="#" onClick="document.getElementById('form2').submit()">{% trans 'Confirmar' %}</a>
+										       </td>
+                                             </tr>
+                                         </table>
+									    </fieldset>
+                                    </form>
+                                    {% else %}
+
+                                        <font COLOR="red"><strong>Esperando confirmación de: <a href="/{{ inn.machine_name }}" >{{ inn.name }}</a></strong></font>
+                                        <form id="form1" action="" method="POST">
+									    <fieldset>
+										    {% csrf_token %}
+                                         <table>
+									         <tr>
+										       <td>
+                                                 {{ form1 }}
+                                               </td>
+                                               <td>
+											      <a class="button-2" href="#" onClick="document.getElementById('form1').submit()">{% trans 'Confirmar' %}</a>
+										       </td>
+                                             </tr>
+                                         </table>
+									    </fieldset>
+                                    </form>
+
+                                    {% endif %}
+
+                                 {% endif %}
+                                 <hr />
+                                 </div>
+                               </article>
+                               {% block visits %}{% endblock %}
+{% endblock %}
+
